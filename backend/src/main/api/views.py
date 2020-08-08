@@ -1,4 +1,4 @@
-from rest_framework.generics import ListAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
 
 from main.models import Question, Lecture
 from .serializers import QuestionSerializer, LectureSerializer
@@ -14,14 +14,21 @@ class LectureListView(ListAPIView):
     queryset = Lecture.objects.all()
     serializer_class = LectureSerializer
 
+
+class QuestionDetailView(RetrieveAPIView):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
+
 class AnswerListView(ListAPIView):
     questions = []
-    for question in Question.objects.filter(confidence_score=0):
+    for question in Question.objects.filter(confidence_score=2):
         questions.append(question.user_question)
     
     if questions != []:
-        sample_speech = speech.sample_recognize("gs://cloud-samples-tests/speech/brooklyn.flac")
-        print(sample_speech)
+        # sample_speech = speech.sample_recognize("gs://cloud-samples-tests/speech/brooklyn.flac")
+        # print(sample_speech)
+
+        sample_speech = "Independence Day is annually celebrated on 15 August, as a national holiday in India commemorating the nation's independence from the United Kingdom on 15 August 1947, the day when the provisions of the Indian Independence Act 1947, as passed by the United Kingdom Parliament, which transferred legislative sovereignty to the Indian Constituent Assembly came into effect."
         
         answers = answer.predict(sample_speech, questions)
         for question, answer in zip(questions, answers):
@@ -32,3 +39,6 @@ class AnswerListView(ListAPIView):
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
 
+class QuestionCreateView(CreateAPIView):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
