@@ -28,14 +28,15 @@ class AnswerListView(ListAPIView):
         questions.append(question.user_question)
     
     if questions != []:
-        # sample_speech = speech.sample_recognize("gs://cloud-samples-tests/speech/brooklyn.flac")
-        sample_speech = "Independence Day is annually celebrated on 15 August, as a national holiday in India commemorating the nation's independence from the United Kingdom on 15 August 1947, the day when the provisions of the Indian Independence Act 1947, as passed by the United Kingdom Parliament, which transferred legislative sovereignty to the Indian Constituent Assembly came into effect."
-        
+        sample_speech = speech.sample_recognize("gs://kataba-audio/Recording.wav")
+        print(sample_speech)
         answers = answer.predict(sample_speech, questions)
         for question, answer in zip(questions, answers):
             to_change = Question.objects.filter(user_question=question)[0]
             to_change.model_answer=answer
+            to_change.answered=True
             to_change.save()
+        
 
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
