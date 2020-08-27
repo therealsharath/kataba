@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800;900&display=swap');
+
+.katabaContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainIntro {
+    display: flex;
+    flex-direction: column;
+}
+.title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 30px;
+    color: #07BEB8;
+}
+
+.subtitle {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    color: #07BEB8;
+}

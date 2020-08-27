@@ -1,13 +1,11 @@
 import React from 'react';
-import Recorder from  './components/Recorder.jsx';
-import Questions from './components/Questions';
+import Kataba from './components/Kataba.jsx';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Recorder />
-      <Questions/>
+      <Kataba />
     </div>
   );
 }

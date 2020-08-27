@@ -1,0 +1,57 @@
+.recorderContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+    padding: 0px 20px 10px 20px;
+}
+
+.record {
+    background-color: rgba(156, 234, 239, 0.25);
+    border: none;
+    padding: 15px;
+    border-radius: 360px;
+    font-size: 40px;
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+}
+
+.record:hover {
+    background-color: rgba(156, 234, 239);
+}
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: #07BEB8;
+    padding: 8px 32px;
+    font-family: Montserrat;
+    font-weight: 600;
+    font-style: normal;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    width: 225px;
+}
+  
+.button1 {
+    background-color: white; 
+    border: 5px solid #68D8D6;
+    cursor: pointer;
+}
+
+.button1:hover {
+    background-color: #68D8D6;
+    color: white;
+}
+
+.buttonContainer {
+    display: flex;
+    width: 500px;
+    justify-content: space-around;
+}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Questions from './Questions.jsx';
 import axios from 'axios';
+import './css/Recorder.css';
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition
@@ -9,7 +11,7 @@ mic.continuous = true
 mic.interimResults = true
 mic.lang = 'en-US'
 
-function Recorder() {
+function Recorder(props) {
     const [isListening, setIsListening] = useState(false)
     const [note, setNote] = useState(null)
 
@@ -56,17 +58,17 @@ function Recorder() {
       }
 
       return (
-        <div className="container">
-            <h1>Kataba</h1>
-            <div className="box">
-                {isListening ? <span>🎙️</span> : <span>🛑🎙️</span>}
-                <button onClick={handleSubmit} disabled={!note}>
-                Save Note
-                </button>
-                <button onClick={() => setIsListening(prevState => !prevState)}>
-                Start/Stop
-                </button>
-            </div>
+        <div className="recorderContainer">
+          <button className="record" onClick={() => setIsListening(prevState => !prevState)}>
+              {!isListening ? <span>🎙️</span> : <span>🛑</span>}
+          </button>
+          <div className="buttonContainer">
+            <button className="button button1" onClick={handleSubmit} disabled={!note}>
+              Upload ☝️
+            </button>
+            <button className="button button1" onClick={() => props.setNewQuestion(!props.newQuestion)}>{props.newQuestion ? "Cancel" : "New Question"}</button>
+          </div>
+          {props.newQuestion && <Questions handleSubmit={props.handleSubmit} setCheck={props.setCheck}/>}
         </div>
       )
 }

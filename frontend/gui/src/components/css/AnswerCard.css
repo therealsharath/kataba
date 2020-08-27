@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+.AnswerCardWrapper {
+    padding: 10px;
+    height: 200px;
+}
+
+.AnswerCard {
+    border: 5px solid #07BEB8;
+    box-sizing: border-box;
+    border-radius: 20px;
+    width: 375px;
+    height: 100%;
+    padding: 20px;
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    list-style-type: none;
+    color: #07BEB8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bunch {
+    display: flex;
+    flex-direction: column;
+}
+
+.Caption {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.Content {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.score1 {
+    color: #32CD32;
+}
+
+.score2 {
+    color: 	#FFDF00;
+}
+
+.score3 {
+    color: #FF4500;
+}
+
+.score4 {
+    color: #c90000;
+}
