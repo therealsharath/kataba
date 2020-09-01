@@ -1,4 +1,4 @@
-# kataba
+# Kataba
 Kataba is an AI-powered educational tool that provides educators with deep insights into their lectures. 
 Kataba is easily accessible as it allows educators to record their lectures with a click of a button. It uses speech recognition software to transcribe lectures and then extract facts from this transcript. It also allows educators to set their metrics by providing their own questions.
 
