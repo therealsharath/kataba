@@ -5,7 +5,6 @@ from rest_framework.response import Response
 from main.models import Question, Lecture
 from .serializers import QuestionSerializer, LectureSerializer
 from . import answer
-from . import speech
 
 class QuestionListView(ListAPIView):
     queryset = Question.objects.all()
